@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /edit/
+Disallow: /admin
+Disallow: /api
+Disallow: /report/
+Allow: /
+Allow: /stashes/
+
+Sitemap: https://stash.co/sitemap.xml
