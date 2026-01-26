@@ -7021,11 +7021,11 @@ var corsMiddleware = /* @__PURE__ */ __name(async (c, next) => {
     });
   }
   await next();
-  c.res.headers.append("Access-Control-Allow-Origin", allowOrigin);
-  c.res.headers.append("Access-Control-Allow-Credentials", "true");
-  c.res.headers.append("Access-Control-Allow-Methods", "GET,HEAD,POST,OPTIONS,PUT,DELETE");
-  c.res.headers.append("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
-  c.res.headers.append("Access-Control-Expose-Headers", "Set-Cookie");
+  c.res.headers.set("Access-Control-Allow-Origin", allowOrigin);
+  c.res.headers.set("Access-Control-Allow-Credentials", "true");
+  c.res.headers.set("Access-Control-Allow-Methods", "GET,HEAD,POST,OPTIONS,PUT,DELETE");
+  c.res.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  c.res.headers.set("Access-Control-Expose-Headers", "Set-Cookie");
 }, "corsMiddleware");
 
 // src/db.ts
