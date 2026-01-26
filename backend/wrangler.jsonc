@@ -1,0 +1,22 @@
+{
+  "name": "stash-api-prod",
+  "main": "src/index.js",
+  "compatibility_date": "2026-01-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "stash-db-prod",
+      "database_id": "03d7c47b-8b1e-4136-9bbf-8f12f19f36fd"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "stash-prod"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production"
+  }
+}
