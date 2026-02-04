@@ -1,14 +1,4 @@
-import { Hono } from 'hono';
-import { router as backendRouter } from '../../backend/src/index.js';
-import { onRequest as testBindingsApp } from './test-bindings.js';
-
-const app = new Hono();
-
-// Mount the backend router
-app.route('/', backendRouter);
-
-// Mount the test bindings app
-app.route('/test', testBindingsApp);
+import { router } from '../../backend/src/index.js';
 
 export async function onRequest(context) {
   // Map Pages Function context to Hono environment
@@ -17,6 +7,6 @@ export async function onRequest(context) {
     ENVIRONMENT: context.env.ENVIRONMENT || 'production'
   };
   
-  // Handle the request using the combined Hono app
-  return app.fetch(context.request, env, context);
+  // Handle the request using the existing Hono router
+  return router.fetch(context.request, env, context);
 }
