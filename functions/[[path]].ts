@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { cors } from 'hono/middleware';
+import { cors } from 'hono/cors';
 
 interface Env {
   DB: D1Database;
