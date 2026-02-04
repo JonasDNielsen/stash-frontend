@@ -7,7 +7,7 @@ interface Env {
 
 const app = new Hono<Env>();
 
-app.get('/api/test', async (c) => {
+app.get('/', async (c) => {
   try {
     // Test D1 binding
     const { results } = await c.env.DB.prepare('SELECT 1 as value').all();
